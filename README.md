@@ -7,10 +7,19 @@ web client of the mbasiuk.stayfocused solution.
 
 ```cmd
 git submodule add https://github.com/mbasiuk/mbasiuk.stayfocused.web.git
+git add .gitmodules
+git commit -m "added mbasiuk.stayfocused.web package. Use README.md for documentation." 
 ```
 
-2) add the index.js file reference from the submodule to your html page.
-3) check the status
+your .submodules file should contain:
+
+```powershell
+[submodule "mbasiuk.stayfocused.web"]
+	path = mbasiuk.stayfocused.web
+	url = https://github.com/mbasiuk/mbasiuk.stayfocused.web.git
+```
+
+2) add the `mbasiuk.stayfocused.web/index.js` to your html page like:
 
 ```html
 ...
@@ -18,15 +27,13 @@ git submodule add https://github.com/mbasiuk/mbasiuk.stayfocused.web.git
 <script async src="/mbasiuk.stayfocused.web/index.js"></script>
 </html>
 ```
-4) commit your .gitmodules file with the following content
 
-```.gitmodules
-[submodule "mbasiuk.stayfocused.web"]
-	path = mbasiuk.stayfocused.web
-	url = https://github.com/mbasiuk/mbasiuk.stayfocused.web.git
-```
+avoid using package managers like npm, nuget, bower, yarn etc for your managing this `mbasiuk.stayfocused.web` version unless it contain custom settings and which work with specific verion of library, because 
+- it usually unreasonable resources consuming activity.
+- as because `mbasiuk.stayfocused.web` should not correlate with any application functionality, it should it's own deployment process, useally much more simple then main application and without affecting lower environment, such as development, qa, etc.
+- as because `mbasiuk.stayfocused.web` funtionality usually much more simple then main product functionality, it's recommended to use only one additional environment before production to configure and test it. Stay focused and open minded. Do not to waste your resources to the activity you can skip.
 
-## Updating package
+## Updating git submodule
 
 ### powershell
 
