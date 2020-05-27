@@ -1,6 +1,6 @@
 var mb = {};
 
-if (window.location.protocol === 'https') {
+if (window.location.protocol === 'https:') {
     mb.uri = 'wss://207.191.157.79';
 } else {
     mb.uri = 'ws://207.191.157.79';
@@ -11,10 +11,8 @@ mb.onerror = function (ev) {
     console.error(ev);
 };
 
-var performance = document.performance;
-
 mb.onopen = function (ev) {
-    var collected = JSON.stringify(performance);
+    var collected = JSON.stringify(document.performance);
     console.log('open', ev, performance, collected);
     websocket.send(collected);
 };
