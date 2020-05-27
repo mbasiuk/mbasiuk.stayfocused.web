@@ -3,13 +3,13 @@ web client of the mbasiuk.stayfocused solution.
 
 ## Installing package for debug
 
-1)  if you are using `git` it recommended to use add `mbasiuk.stayfocused` as git submodule. See [official git docs](https://git-scm.com/book/en/v2/Git-Tools-Submodules). Otherwise you might install it manually.
+1)  if you are using `git` it's recommended to use add `mbasiuk.stayfocused` as git submodule. See [official git docs](https://git-scm.com/book/en/v2/Git-Tools-Submodules). Otherwise you might install it from your fork using [clone link](https://github.com/mbasiuk/mbasiuk.stayfocused.web.git), or directly clone or download it as [zip](https://github.com/mbasiuk/mbasiuk.stayfocused.web/archive/master.zip) if you just want quick test how it's working. To use submodule git submodule:
 
 ```cmd
 git submodule add https://github.com/mbasiuk/mbasiuk.stayfocused.web.git
 ```
 
-2) add the [index.js] file reference from the submodule to your html page.
+2) add the index.js file reference from the submodule to your html page.
 3) check the status
 
 ```html
@@ -17,6 +17,13 @@ git submodule add https://github.com/mbasiuk/mbasiuk.stayfocused.web.git
 </body>
 <script async src="/mbasiuk.stayfocused.web/index.js"></script>
 </html>
+```
+4) commit your .gitmodules file with the following content
+
+```.gitmodules
+[submodule "mbasiuk.stayfocused.web"]
+	path = mbasiuk.stayfocused.web
+	url = https://github.com/mbasiuk/mbasiuk.stayfocused.web.git
 ```
 
 ## Updating package
