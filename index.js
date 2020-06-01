@@ -1,9 +1,9 @@
 var mb = {};
 
 if (window.location.protocol === 'https:') {
-    mb.uri = 'wss://207.191.157.79';
+    mb.uri = 'wss://m.zergatul.com';
 } else {
-    mb.uri = 'ws://207.191.157.79';
+    mb.uri = 'ws://m.zergatul.com';
 }
 
 mb.ws = new WebSocket(mb.uri);
@@ -25,7 +25,7 @@ mb.onmessage = function (ev) {
     console.log('message', ev)
 };
 
-if(window.mbx) {
+if (window.mbx) {
     mb = Object.assign(mb, mbx);
 }
 
